@@ -26,12 +26,12 @@ app.get('/app/flip', (req, res) => {
 app.get('/app/flips/:number', (req, res) => {
     var flips = coinFlips(req.params.number)
     var summary = countFlips(flips)
-    res.status(200).json({ 'raw' : flips, 'summary' : summary})
+    res.status(200).contentType('text/plain').json({ "raw" : flips, "summary" : summary})
 
 });
 
 app.get('/app/flip/call/:call', (req, res) => {
-    res.status(200).json(flipACoin(req.params.call))
+    res.status(200).contentType('text/plain').json(flipACoin(req.params.call))
 
 });
 
@@ -84,16 +84,16 @@ function countFlips(array) {
         tails++;
       }
     }
-    return "{ tails: " + tails + ", heads: " + heads + " }";
+    return "{'tails':'" + tails + ",'heads':'" + heads + "'}";
   }
 
 function flipACoin(call) {
     if (call == "heads" || call == "tails") {
       let x = coinFlip();
       if (x == call) {
-        return "{ call: '" + call + "', flip: '" + x + "', result: 'win' }"
+        return "{'call':" + call + "','flip':'" + x + "','result': 'win'}"
       } else {
-        return "{ call: '" + call + "', flip: '" + x + "', result: 'lose' }"
+        return "{'call':'" + call + "','flip':'" + x + "','result': 'lose'}"
       }
     }
     
