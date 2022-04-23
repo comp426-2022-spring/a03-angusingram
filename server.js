@@ -49,7 +49,7 @@ res.status(404).send('404 NOT FOUND')
 
 
 
-export function coinFlip() {
+function coinFlip() {
     let min = 1;
     let max = 10;
     let x = Math.floor(Math.random() * (max - min + 1) + min);
@@ -75,7 +75,7 @@ function coinFlips(flips) {
 }
 
 
-export function countFlips(array) {
+function countFlips(array) {
     let heads = 0;
     let tails = 0;
     for (let i = 0; i < array.length; i++) {
@@ -88,7 +88,7 @@ export function countFlips(array) {
     return "{ heads: " + heads + ", tails: " + tails + " }";
   }
 
-  export function flipACoin(call) {
+function flipACoin(call) {
     if (call == "heads" || call == "tails") {
       let x = coinFlip();
       if (x == call) {
