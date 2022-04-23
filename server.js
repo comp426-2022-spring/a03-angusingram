@@ -78,8 +78,8 @@ function coinFlips(flips) {
 function countFlips(array) {
     let headscount = 0;
     let tailscount = 0;
-    let heads = '\"heads\"'
-    let tails = '\"tails\"'
+    let heads = "heads"
+    let tails = "tails"
     for (let i = 0; i < array.length; i++) {
       if (array[i] == "heads") {
         headscount++;
@@ -94,9 +94,9 @@ function flipACoin(call) {
     if (call == "heads" || call == "tails") {
       let x = coinFlip();
       if (x == call) {
-        return '{\"call\":\"' + call + '\",\"flip\":\"' + x + '\",\"result\":\"win\"}'
+        return '{call:' + call + ',flip:' + x + ',result:win}'
       } else {
-        return '{\"call\":\"' + call + '\",\"flip\":\"' + x + '\",\"result\":\"lose\"}'
+        return '{call:' + call + ',flip:' + x + ',result:lose}'
       }
     }
     
