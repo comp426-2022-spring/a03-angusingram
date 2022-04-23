@@ -85,7 +85,7 @@ function countFlips(array) {
         tails++;
       }
     }
-    return "{ heads: " + heads + ", tails: " + tails + " }";
+    return "{\"heads\":" + heads + ",\"tails\":" + tails + "}";
   }
 
 function flipACoin(call) {
