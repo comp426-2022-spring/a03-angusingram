@@ -82,12 +82,12 @@ function countFlips(array) {
     let tails = '"tails"'
     for (let i = 0; i < array.length; i++) {
       if (array[i] == "heads") {
-        heads++;
+        headscount++;
       } else {
-        tails++;
+        tailscount++;
       }
     }
-    return '{'+ heads + ':' + headscount + ',' + tails + ':' + tailscount + '}';
+    return "{"+ heads + ":" + headscount + "," + tails + ":" + tailscount + "}";
   }
 
 function flipACoin(call) {
