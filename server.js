@@ -76,8 +76,10 @@ function coinFlips(flips) {
 
 
 function countFlips(array) {
-    let heads = 0;
-    let tails = 0;
+    let headscount = 0;
+    let tailscount = 0;
+    let heads = '"heads"'
+    let tails = '"tails"'
     for (let i = 0; i < array.length; i++) {
       if (array[i] == "heads") {
         heads++;
@@ -85,7 +87,7 @@ function countFlips(array) {
         tails++;
       }
     }
-    return '{\"heads\":\"' + heads + '\",\"tails\":\"' + tails + '\"}';
+    return '{'+ heads + ':' + headscount + ',' + tails + ':' + tailscount + '}';
   }
 
 function flipACoin(call) {
