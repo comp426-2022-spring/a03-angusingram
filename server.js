@@ -55,9 +55,9 @@ function coinFlip() {
     let x = Math.floor(Math.random() * (max - min + 1) + min);
     x = x % 2;
     if(x == 1) {
-      return '"heads"';
+      return "heads";
     } else if (x == 0) {
-      return '"tails"';
+      return "tails";
     }
   }
   
