@@ -26,12 +26,12 @@ app.get('/app/flip', (req, res) => {
 app.get('/app/flips/:number', (req, res) => {
     var flips = coinFlips(req.params.number)
     var summary = countFlips(flips)
-    res.status(200).contentType('text/plain').json({ "raw" : flips, "summary" : summary})
+    res.status(200).contentType('text/UTF-8').json({ "raw" : flips, "summary" : summary})
 
 });
 
 app.get('/app/flip/call/:call', (req, res) => {
-    res.status(200).contentType('text/plain').json(flipACoin(req.params.call))
+    res.status(200).contentType('text/UTF-8').json(flipACoin(req.params.call))
 
 });
 
@@ -78,8 +78,8 @@ function coinFlips(flips) {
 function countFlips(array) {
     let headscount = 0;
     let tailscount = 0;
-    let heads = '"heads"'
-    let tails = '"tails"'
+    let heads = '\"heads\"'
+    let tails = '\"tails\"'
     for (let i = 0; i < array.length; i++) {
       if (array[i] == "heads") {
         headscount++;
