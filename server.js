@@ -49,17 +49,17 @@ res.status(404).send('404 NOT FOUND')
 
 
 
-function coinFlip() {
+export function coinFlip() {
     let min = 1;
     let max = 10;
     let x = Math.floor(Math.random() * (max - min + 1) + min);
     x = x % 2;
     if(x == 1) {
-      return "heads";
+      return '"heads"';
     } else if (x == 0) {
-      return "tails";
+      return '"tails"';
     }
-}
+  }
   
 
   
@@ -74,7 +74,8 @@ function coinFlips(flips) {
     return array;
 }
 
-function countFlips(array) {
+
+export function countFlips(array) {
     let heads = 0;
     let tails = 0;
     for (let i = 0; i < array.length; i++) {
@@ -84,16 +85,16 @@ function countFlips(array) {
         tails++;
       }
     }
-    return "{'tails':'" + tails + ",'heads':'" + heads + "'}";
+    return "{ heads: " + heads + ", tails: " + tails + " }";
   }
 
-function flipACoin(call) {
+  export function flipACoin(call) {
     if (call == "heads" || call == "tails") {
       let x = coinFlip();
       if (x == call) {
-        return "{'call':" + call + "','flip':'" + x + "','result':'win'}"
+        return "{ call: '" + call + "', flip: '" + x + "', result: 'win' }"
       } else {
-        return "{'call':'" + call + "','flip':'" + x + "','result':'lose'}"
+        return "{ call: '" + call + "', flip: " + x + ", result: 'lose' }"
       }
     }
     
