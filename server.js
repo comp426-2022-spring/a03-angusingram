@@ -86,16 +86,17 @@ function countFlips(array) {
         tailscount++;
       }
     }
-    return "{\"heads\":\"" + headscount + "\",\"tails\":\"" + tailscount + "\"}";
+    return {"heads":  headscount  ,"tails":  tailscount  }
+
   }
 
 function flipACoin(call) {
     if (call == "heads" || call == "tails") {
       let x = coinFlip();
       if (x == call) {
-        return '{call:' + call + ',flip:' + x + ',result:win}'
+        return {"call":call,"flip":x,"result":"win"}
       } else {
-        return '{call:' + call + ',flip:' + x + ',result:lose}'
+        return {"call":call,"flip":x,"result":"lose"}
       }
     }
     
